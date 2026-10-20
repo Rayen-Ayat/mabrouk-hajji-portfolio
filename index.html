@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+</head>
+<body>
+<title>Mabrouk Hajji</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Mabrouk Hajji — Ingénieur en génie électromécanique, organisation et gestion industrielle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: split hero (copy | full-bleed photo) like a nameplate, then stacked sections on a steel-grey page; navy + safety-yellow from the photo */
+:root{
+  --bg:#EDF0F3; --surface:#FFFFFF; --ink:#16213A; --muted:#55637A; --line:#D2D9E2;
+  --accent:#F5C400; --on-accent:#16213A; --band:#16213A; --band-fg:#E7ECF3; --band-muted:#9DABBF; --chip:#E3E8EE;
+  --display:'Barlow Condensed','Arial Narrow',Impact,sans-serif;
+  --body:'Barlow','Segoe UI',Helvetica,Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --maxw:1180px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0E1522; --surface:#162036; --ink:#E8EDF4; --muted:#9AA8BC; --line:#28354D;
+  --accent:#F5C400; --on-accent:#16213A; --band:#08101C; --band-fg:#E7ECF3; --band-muted:#8E9CB1; --chip:#1E2A42; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0E1522; --surface:#162036; --ink:#E8EDF4; --muted:#9AA8BC; --line:#28354D;
+  --accent:#F5C400; --on-accent:#16213A; --band:#08101C; --band-fg:#E7ECF3; --band-muted:#8E9CB1; --chip:#1E2A42; color-scheme:dark }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.ic{flex:none;display:block}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
+.logo .mark{width:38px;height:38px;border-radius:10px;background:var(--ink);color:var(--accent);display:grid;place-items:center}
+.logo b{font-weight:800} .logo span.thin{font-weight:600;color:var(--muted)}
+nav.links{display:flex;gap:22px;margin-left:auto;white-space:nowrap}
+nav.links a{text-decoration:none;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);padding:6px 0;white-space:nowrap;border-bottom:2px solid transparent}
+nav.links a:hover{border-color:var(--accent)}
+.lang{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;flex:none}
+.lang button{all:unset;cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.08em;padding:6px 11px;color:var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;border:2px solid var(--ink);border-radius:999px;padding:13px 26px;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.18em;text-transform:uppercase;background:transparent;color:var(--ink);transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.yellow{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.top .btn{padding:10px 20px;font-size:14px;white-space:nowrap;flex:none}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.hero-copy{padding-block:72px 64px;padding-left:max(16px,env(safe-area-inset-left,0px),calc((100vw - var(--maxw))/2 + 16px));padding-right:48px;display:flex;flex-direction:column;justify-content:center;gap:26px;min-width:0}
+.eyebrow{display:flex;align-items:center;gap:16px;font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink)}
+.eyebrow::before{content:"";width:56px;height:3px;background:var(--ink);flex:none}
+h1.name{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(56px,7.2vw,112px);line-height:.86;letter-spacing:-.005em;margin:0;color:var(--ink);text-wrap:balance}
+h1.name .row2{display:inline-flex;align-items:center;gap:.18em}
+h1.name .hl{background:linear-gradient(transparent 62%,var(--accent) 62%,var(--accent) 92%,transparent 92%)}
+h1.name .ic{width:.62em;height:.62em;color:var(--ink)}
+.lead{font-size:20px;line-height:1.55;max-width:34ch;margin:0;color:var(--ink)}
+.lead strong{font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.meta{display:flex;flex-wrap:wrap;gap:12px 28px;color:var(--muted);font-size:16px}
+.meta span{display:inline-flex;align-items:center;gap:8px}
+.hero-photo{position:relative;min-height:560px;background:#1b2436;overflow:hidden}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(14,21,34,.55))}
+.badge{position:absolute;top:28px;right:28px;z-index:2;width:150px;height:150px;border-radius:50%;background:#16213A;color:#E7ECF3;display:grid;place-content:center;text-align:center;box-shadow:0 0 0 8px var(--bg)}
+.badge b{font-family:var(--display);font-weight:800;font-size:54px;line-height:.9;color:#fff}
+.badge small{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#F5C400;margin-top:6px;padding:0 10px}
+.plate{position:absolute;left:28px;bottom:28px;z-index:2;background:var(--surface);color:var(--ink);border-radius:18px;padding:16px 22px;display:flex;align-items:center;gap:16px;box-shadow:0 10px 30px rgba(10,16,30,.25)}
+.plate b{font-family:var(--display);font-weight:800;font-size:44px;line-height:1;letter-spacing:.02em}
+.plate small{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.2em;text-transform:uppercase;line-height:1.25}
+.cog{position:absolute;right:28px;bottom:28px;z-index:2;width:86px;height:86px;border-radius:50%;background:var(--accent);color:#16213A;display:grid;place-items:center;box-shadow:0 0 0 6px rgba(255,255,255,.85)}
+.cog .ic{animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hazard{height:10px;background:repeating-linear-gradient(-45deg,var(--accent) 0 14px,#16213A 14px 28px)}
+
+/* sections */
+section.blk{padding-block:88px}
+.kicker{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.kicker .ic{color:var(--ink);background:var(--accent);border-radius:8px;padding:5px;width:30px;height:30px}
+h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(34px,4.6vw,56px);line-height:.95;margin:0 0 36px;letter-spacing:.005em;text-wrap:balance;max-width:20ch}
+h3{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:22px;margin:0}
+.about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:start}
+.about-grid p{font-size:19px;max-width:60ch;margin:0}
+.stats{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink)}
+.stat{padding:22px 4px 22px 0;border-bottom:1px solid var(--line)}
+.stat:nth-child(odd){border-right:1px solid var(--line)} .stat:nth-child(even){padding-left:22px}
+.stat b{display:block;font-family:var(--display);font-weight:800;font-size:64px;line-height:.9;font-variant-numeric:tabular-nums}
+.stat b::after{content:"";display:inline-block;width:12px;height:12px;background:var(--accent);margin-left:6px;vertical-align:top;margin-top:8px}
+.stat span{font-family:var(--display);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:14px;color:var(--muted)}
+
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.timeline{display:grid;gap:0;border-left:2px solid var(--ink);margin-left:8px}
+.tl{position:relative;padding:0 0 40px 34px}
+.tl:last-child{padding-bottom:4px}
+.tl::before{content:"";position:absolute;left:-9px;top:6px;width:16px;height:16px;background:var(--accent);border:2px solid var(--ink);transform:rotate(45deg)}
+.tl .date{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.04em}
+.tl h4{font-family:var(--display);font-weight:700;font-size:28px;line-height:1.1;margin:4px 0 2px;text-transform:uppercase}
+.tl .role{color:var(--muted);font-size:16px}
+.tl ul{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:6px;max-width:70ch}
+.tl li{position:relative;padding-left:20px}
+.tl li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;background:var(--ink);transform:rotate(45deg)}
+.subs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}
+.sub{background:var(--bg);border-radius:12px;padding:16px 18px;border-top:4px solid var(--accent);min-width:0}
+.sub .date{display:block}
+.sub b{display:block;font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.03em;margin:2px 0 4px}
+.sub.now{background:var(--ink);color:var(--bg)} .sub.now .date{color:var(--accent)} .sub.now li::before{background:var(--accent)}
+.sub ul{margin-top:6px}
+.train{margin-top:56px}
+.train-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+.tcard{border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0}
+.tcard .date{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.tcard b{display:block;font-family:var(--display);font-weight:700;font-size:21px;text-transform:uppercase;margin:4px 0}
+
+.cred-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.edu{display:grid;gap:0;border-top:2px solid var(--ink)}
+.edu-row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.edu-row .date{font-family:var(--mono);font-size:14px;color:var(--muted);padding-top:4px}
+.edu-row b{display:block;font-family:var(--display);font-weight:700;font-size:24px;text-transform:uppercase;line-height:1.1}
+.edu-row div{min-width:0} .edu-row em{font-style:normal;color:var(--muted);display:block}
+.certs{display:grid;gap:12px}
+.cert{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.cert .ic{color:var(--on-accent);background:var(--accent);border-radius:10px;padding:8px;width:44px;height:44px}
+.cert b{display:block;font-family:var(--display);font-weight:700;font-size:21px;text-transform:uppercase}
+.cert small{color:var(--muted);font-size:14px}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:16px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.skill .ic{color:var(--ink)}
+.skill h3{font-size:19px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-family:var(--mono);font-size:12.5px;padding:5px 10px;border-radius:6px;background:var(--chip)}
+.langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px;margin-top:40px}
+.lg{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:2px solid var(--ink);padding-top:14px}
+.lg b{display:block;font-family:var(--display);font-weight:700;font-size:22px;text-transform:uppercase}
+.lg small{color:var(--muted)}
+.dots{display:flex;gap:6px} .dots i{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink)} .dots i.on{background:var(--accent);border-color:var(--accent)}
+
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.proj{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:24px;border-radius:16px;background:var(--bg);border:1px solid var(--line)}
+.proj .icbox{width:56px;height:56px;border-radius:14px;background:var(--ink);color:var(--accent);display:grid;place-items:center}
+.proj h3{font-size:22px;line-height:1.1;margin-bottom:6px}
+.proj p{margin:0 0 12px;color:var(--muted)}
+.proj div{min-width:0}
+
+/* CV */
+.cv-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center}
+.cv-copy p{font-size:18px;max-width:46ch;margin:0 0 28px}
+.seg{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:var(--chip);margin:8px 0 26px}
+.seg button{all:unset;cursor:pointer;padding:8px 18px;border-radius:999px;font-family:var(--display);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:14px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg-label{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.cv-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.cv-meta{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:16px;letter-spacing:.06em}
+.sheet{position:relative;background:#fff;border-radius:6px;box-shadow:0 1px 0 var(--line),0 30px 60px -20px rgba(10,16,30,.35);transform:rotate(1.2deg);transition:transform .25s;cursor:zoom-in;max-width:560px;justify-self:center;width:100%}
+.sheet:hover{transform:rotate(0) translateY(-4px)}
+.sheet img{display:block;width:100%;height:auto;border-radius:6px;aspect-ratio:210/297;object-fit:cover}
+.sheet .tape{position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-2deg);width:120px;height:28px;background:repeating-linear-gradient(-45deg,#F5C400 0 10px,#16213A 10px 20px);opacity:.92;border-radius:2px}
+.sheet .zoom{position:absolute;right:14px;bottom:14px;background:#16213A;color:#F5C400;border-radius:999px;padding:8px 14px;display:flex;gap:8px;align-items:center;font-family:var(--display);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(8,12,22,.88);display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:calc(56px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 32px max(16px,env(safe-area-inset-left,0px))}
+.lightbox img{width:min(900px,100%);height:auto;border-radius:4px;background:#fff}
+.lightbox button{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:calc(16px + env(safe-area-inset-right,0px));all:unset;cursor:pointer}
+.lb-close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:calc(16px + env(safe-area-inset-right,0px));background:#F5C400;color:#16213A;border:0;border-radius:999px;padding:10px 18px;font-family:var(--display);font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+
+/* contact */
+.contact{background:var(--band);color:var(--band-fg)}
+.contact .kicker{color:var(--band-muted)}
+.contact h2{color:#fff;max-width:18ch}
+.contact p.sub-lead{color:var(--band-muted);font-size:18px;max-width:52ch;margin:-12px 0 36px}
+.ctiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ctile{border:1px solid rgba(231,236,243,.18);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.ctile .ic{color:#F5C400}
+.ctile .lbl{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--band-muted)}
+.ctile .val{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:.02em;overflow-wrap:anywhere;user-select:all;color:#fff}
+.copy{all:unset;cursor:pointer;align-self:flex-start;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(231,236,243,.35);border-radius:999px;padding:6px 12px;color:var(--band-fg)}
+.copy:hover{background:#F5C400;color:#16213A;border-color:#F5C400}
+footer{background:var(--band);color:var(--band-muted);border-top:1px solid rgba(231,236,243,.12)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding-block:22px;font-family:var(--mono);font-size:12px;letter-spacing:.08em}
+footer .logo{color:#fff;font-size:18px} footer .logo .mark{background:#F5C400;color:#16213A;width:30px;height:30px;border-radius:8px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:500;z-index:120;max-width:calc(100% - 32px)}
+
+/* responsive */
+@media (max-width:1220px){ nav.links{display:none} .lang{margin-left:auto} }
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-copy{padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:48px 40px}
+  .hero-photo{min-height:520px}
+  .about-grid,.cred-grid,.cv-grid{grid-template-columns:1fr;gap:40px}
+  .subs,.train-list,.ctiles{grid-template-columns:1fr}
+  .projects{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .top .btn{display:none}
+  .logo .full{display:none}
+  section.blk{padding-block:64px}
+  .badge{width:112px;height:112px;top:16px;right:16px} .badge b{font-size:40px} .badge small{font-size:11px}
+  .plate{left:16px;bottom:16px;padding:12px 16px;gap:12px} .plate b{font-size:34px} .plate small{font-size:11px}
+  .cog{width:64px;height:64px;right:16px;bottom:16px}
+  .eyebrow{font-size:13px;letter-spacing:.22em} .eyebrow::before{width:32px}
+  .lead{font-size:18px}
+  .edu-row{grid-template-columns:1fr;gap:4px}
+  .proj{grid-template-columns:1fr}
+  .stat b{font-size:48px}
+}
+</style>
+
+<header class="top"><div class="wrap">
+  <a class="logo" href="#top" aria-label="Mabrouk Hajji"><span class="mark"><svg class="ic " viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l1.3 2.2 2.5-.6.6 2.5 2.4.9-.6 2.5 1.8 1.8-1.8 1.8.6 2.5-2.4.9-.6 2.5-2.5-.6L12 21.5l-1.3-2.2-2.5.6-.6-2.5-2.4-.9.6-2.5L4 12.2l1.8-1.8-.6-2.5 2.4-.9.6-2.5 2.5.6z"/><path d="M12.6 7.6L9.6 12.4h2.6l-.8 4 3-4.8h-2.6z"/></svg></span><span><b>M. Hajji</b><span class="thin full"> · <span data-i18n="logo.sub">Électromécanique</span></span></span></a>
+  <nav class="links" aria-label="Sections">
+    <a href="#about"><span data-i18n="nav.about">À propos</span></a><a href="#experience"><span data-i18n="nav.exp">Expérience</span></a><a href="#credentials"><span data-i18n="nav.cred">Diplômes</span></a>
+    <a href="#skills"><span data-i18n="nav.skills">Compétences</span></a><a href="#cv"><span data-i18n="nav.cv">CV</span></a><a href="#contact"><span data-i18n="nav.contact">Contact</span></a>
+  </nav>
+  <div class="lang" role="group" aria-label="Langue / Language">
+    <button id="lang-fr" type="button" aria-pressed="true" data-lang="fr">FR</button>
+    <button id="lang-en" type="button" aria-pressed="false" data-lang="en">EN</button>
+  </div>
+  <a class="btn solid" href="#contact"><span data-i18n="cta">Me contacter</span></a>
+</div></header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span data-i18n="hero.eyebrow">Ingénieur électromécanique · Ben Arous, Tunisie</span></div>
+    <h1 class="name">Mabrouk<br><span class="row2"><span class="hl">Hajji</span><svg class="ic " viewBox="0 0 24 24" width="60" height="60" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l1.3 2.2 2.5-.6.6 2.5 2.4.9-.6 2.5 1.8 1.8-1.8 1.8.6 2.5-2.4.9-.6 2.5-2.5-.6L12 21.5l-1.3-2.2-2.5.6-.6-2.5-2.4-.9.6-2.5L4 12.2l1.8-1.8-.6-2.5 2.4-.9.6-2.5 2.5.6z"/><circle cx="12" cy="12" r="3.2"/></svg></span></h1>
+    <p class="lead" data-i18n="hero.lead"><strong>Contrôleur de gestion</strong> chez MDO – Marbre Design &amp; Objet. Ingénieur en génie électromécanique, spécialité Organisation et Gestion Industrielle, avec 4 ans entre production, stock et pilotage des coûts.</p>
+    <div class="hero-actions">
+      <a class="btn solid" href="#contact"><svg class="ic " viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg><span data-i18n="hero.contact">Me contacter</span></a>
+      <a class="btn" href="#cv"><svg class="ic " viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span data-i18n="hero.cv">Voir mon CV</span></a>
+    </div>
+    <div class="meta"><span><svg class="ic " viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span data-i18n="city">Ben Arous, Tunisie</span></span><span><svg class="ic " viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>hajjimabrouk50@gmail.com</span></div>
+  </div>
+  <div class="hero-photo">
+    <img src="photo.jpg" alt="Mabrouk Hajji" width="800" height="1200">
+    <div class="badge"><b>4 <span data-i18n="badge.unit" style="font-size:.55em">ans</span></b><small data-i18n="badge.sub">MDO · Industrie</small></div>
+    <div class="plate"><b>OGI</b><small><span data-i18n="card.sub1">Organisation &amp;</span><br><span data-i18n="card.sub2">Gestion industrielle</span></small></div>
+    <div class="cog"><svg class="ic " viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l1.3 2.2 2.5-.6.6 2.5 2.4.9-.6 2.5 1.8 1.8-1.8 1.8.6 2.5-2.4.9-.6 2.5-2.5-.6L12 21.5l-1.3-2.2-2.5.6-.6-2.5-2.4-.9.6-2.5L4 12.2l1.8-1.8-.6-2.5 2.4-.9.6-2.5 2.5.6z"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+  </div>
+</section>
+<div class="hazard" role="presentation"></div>
+
+<section class="blk" id="about"><div class="wrap">
+  <div class="kicker"><svg class="ic " viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span data-i18n="about.k">À propos</span></div>
+  <h2 data-i18n="about.h">Du terrain de production au pilotage des coûts</h2>
+  <div class="about-grid">
+    <p id="summary"></p>
+    <div class="stats">
+      <div class="stat"><b>4</b><span data-i18n="stat.1">ans chez MDO</span></div>
+      <div class="stat"><b>3</b><span data-i18n="stat.2">fonctions occupées</span></div>
+      <div class="stat"><b>6</b><span data-i18n="stat.3">stages en entreprise</span></div>
+      <div class="stat"><b>3</b><span data-i18n="stat.4">certificats Mastercam</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="blk alt" id="experience"><div class="wrap">
+  <div class="kicker"><svg class="ic " viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></svg><span data-i18n="exp.k">Expérience</span></div>
+  <h2 data-i18n="exp.h">Parcours professionnel</h2>
+  <div class="timeline" id="timeline"></div>
+  <div class="train"><h3 data-i18n="train.h">Stages de perfectionnement</h3><div class="train-list" id="train"></div></div>
+</div></section>
+
+<section class="blk" id="credentials"><div class="wrap">
+  <div class="kicker"><svg class="ic " viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></svg><span data-i18n="cred.k">Diplômes</span></div>
+  <h2 data-i18n="cred.h">Formation &amp; certificats</h2>
+  <div class="cred-grid">
+    <div class="edu" id="edu"></div>
+    <div><h3 data-i18n="cert.h" style="margin-bottom:16px">Certificats</h3><div class="certs" id="certs"></div></div>
+  </div>
+</div></section>
+
+<section class="blk alt" id="skills"><div class="wrap">
+  <div class="kicker"><svg class="ic " viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2.5v3.5M15 2.5v3.5M9 18v3.5M15 18v3.5M2.5 9H6M2.5 15H6M18 9h3.5M18 15h3.5"/></svg><span data-i18n="skills.k">Compétences</span></div>
+  <h2 data-i18n="skills.h">Outils &amp; méthodes</h2>
+  <div class="skills" id="skillgrid"></div>
+  <h3 data-i18n="lang.h" style="margin-top:56px">Langues</h3>
+  <div class="langs" id="langs" style="margin-top:18px"></div>
+</div></section>
+
+<section class="blk" id="projects"><div class="wrap">
+  <div class="kicker"><svg class="ic " viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20.5h8M9 20.5v-4"/><circle cx="9" cy="15" r="1.6"/><path d="M9 13.4L14 7"/><circle cx="14.5" cy="6.5" r="1.5"/><path d="M15.8 7.4l4.2 3.1M19.2 9.2l1.6 3.4"/></svg><span data-i18n="proj.k">Projets</span></div>
+  <h2 data-i18n="proj.h">Projets académiques</h2>
+  <div class="projects" id="projgrid"></div>
+</div></section>
+
+<section class="blk alt" id="cv"><div class="wrap cv-grid">
+  <div class="cv-copy">
+    <div class="kicker"><svg class="ic " viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><circle cx="12" cy="17" r="3"/><path d="M10.2 19.4L9.5 22l2.5-1 2.5 1-.7-2.6M7 8h10M7 11h5"/></svg><span data-i18n="cv.k">Curriculum vitae</span></div>
+    <h2 data-i18n="cv.h">Consulter &amp; télécharger mon CV</h2>
+    <p data-i18n="cv.p">Le CV est disponible en français et en anglais, dans la même charte que ce site. Choisissez la version, consultez-la ici, puis téléchargez le PDF.</p>
+    <div class="seg-label" data-i18n="cv.view">Version affichée</div>
+    <div class="seg" role="group" aria-label="CV">
+      <button id="cv-fr" type="button" aria-pressed="true" data-cv="fr">Français</button>
+      <button id="cv-en" type="button" aria-pressed="false" data-cv="en">English</button>
+    </div>
+    <div class="cv-actions">
+      <a class="btn yellow" id="cv-dl" href="cv/CV_Mabrouk_Hajji_FR.pdf" download><svg class="ic " viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5v12M7 11l5 5 5-5M4 20.5h16"/></svg><span data-i18n="cv.dl">Télécharger le PDF</span></a>
+      <a class="btn" id="cv-open" href="cv/CV_Mabrouk_Hajji_FR.pdf" target="_blank" rel="noopener"><svg class="ic " viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span data-i18n="cv.open">Ouvrir en plein écran</span></a>
+    </div>
+    <div class="cv-meta" id="cv-meta">CV_Mabrouk_Hajji_FR.pdf · <span data-i18n="cv.meta">PDF · A4 · 1 page</span></div>
+  </div>
+  <figure class="sheet" id="sheet" tabindex="0" role="button" aria-label="CV" style="margin:0">
+    <span class="tape" aria-hidden="true"></span>
+    <img id="cv-img" src="cv/preview_fr.jpg" alt="CV Mabrouk Hajji" width="1000" height="1414">
+    <span class="zoom"><svg class="ic " viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span data-i18n="cv.open">Ouvrir en plein écran</span></span>
+  </figure>
+</div></section>
+
+<section class="blk contact" id="contact"><div class="wrap">
+  <div class="kicker"><svg class="ic " viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z"/></svg><span data-i18n="contact.k">Contact</span></div>
+  <h2 data-i18n="contact.h">Parlons de votre prochain projet industriel</h2>
+  <p class="sub-lead" data-i18n="contact.p">Disponible pour des postes en contrôle de gestion, méthodes, maintenance ou amélioration continue.</p>
+  <div class="ctiles">
+    <div class="ctile"><svg class="ic " viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg><span class="lbl">Email</span><span class="val">hajjimabrouk50@gmail.com</span><button class="copy" type="button" data-copy="hajjimabrouk50@gmail.com" data-i18n="copy">Copier</button></div>
+    <div class="ctile"><svg class="ic " viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.5l1.8 4.5-2.3 1.5a11 11 0 0 0 6.5 6.5l1.5-2.3 4.5 1.8V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5z"/></svg><span class="lbl" data-i18n="lbl.phone">Téléphone</span><span class="val">+216 20 584 221</span><button class="copy" type="button" data-copy="+216 20 584 221" data-i18n="copy">Copier</button></div>
+    <div class="ctile"><svg class="ic " viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span class="lbl" data-i18n="lbl.loc">Localisation</span><span class="val" data-i18n="city">Ben Arous, Tunisie</span></div>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap"><a class="logo" href="#top"><span class="mark"><svg class="ic " viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l1.3 2.2 2.5-.6.6 2.5 2.4.9-.6 2.5 1.8 1.8-1.8 1.8.6 2.5-2.4.9-.6 2.5-2.5-.6L12 21.5l-1.3-2.2-2.5.6-.6-2.5-2.4-.9.6-2.5L4 12.2l1.8-1.8-.6-2.5 2.4-.9.6-2.5 2.5.6z"/><path d="M12.6 7.6L9.6 12.4h2.6l-.8 4 3-4.8h-2.6z"/></svg></span>M. Hajji</a><span data-i18n="footer">Ingénieur électromécanique · Organisation & Gestion industrielle</span><span>© 2026</span></div></footer>
+
+<script>
+const DATA = {"PROFILE": {"name_first": "Mabrouk", "name_last": "Hajji", "email": "hajjimabrouk50@gmail.com", "phone": "+216 20 584 221", "city": {"fr": "Ben Arous, Tunisie", "en": "Ben Arous, Tunisia"}, "title": {"fr": "Ingénieur en génie électromécanique", "en": "Electromechanical Engineer"}, "spec": {"fr": "Spécialité Organisation et Gestion Industrielle", "en": "Specialization in Industrial Organization & Management"}, "summary": {"fr": "Ingénieur électromécanicien formé à ESPRIT, spécialisé en organisation et gestion industrielle. Quatre ans chez MDO – Marbre Design & Objet, de l'atelier de production au contrôle de gestion : organisation du travail, sécurité, gestion des stocks, suivi des coûts et indicateurs de performance. Une base solide en maintenance industrielle, Lean manufacturing et outils qualité.", "en": "Electromechanical engineer trained at ESPRIT, specialized in industrial organization and management. Four years at MDO – Marbre Design & Objet, moving from the production floor to management control: workplace organization, safety, inventory management, cost tracking and performance indicators. A solid grounding in industrial maintenance, Lean manufacturing and quality tools."}}, "EXPERIENCE": [{"dates": "11/2022 – {now}", "org": "MDO – Marbre Design & Objet", "role": {"fr": "Poste actuel · 3 fonctions successives", "en": "Current position · 3 successive roles"}, "kind": "job", "sub": [{"dates": "11/2024 – {now}", "title": {"fr": "Contrôleur de gestion", "en": "Management Controller"}, "items": {"fr": ["Suivi et analyse des coûts", "Élaboration et suivi des indicateurs de performance", "Aide à la prise de décision stratégique"], "en": ["Cost tracking and analysis", "Design and monitoring of performance indicators (KPIs)", "Support for strategic decision-making"]}}, {"dates": "11/2023 – 11/2024", "title": {"fr": "Responsable du stock", "en": "Inventory Manager"}, "items": {"fr": ["Gestion des entrées et sorties de stock", "Suivi des inventaires et optimisation des coûts"], "en": ["Managed stock receipts and issues", "Inventory tracking and cost optimization"]}}, {"dates": "11/2022 – 11/2023", "title": {"fr": "Adjoint au responsable de production", "en": "Production Assistant to the Production Manager"}, "items": {"fr": ["Organisation du milieu de travail", "Amélioration de la productivité et de la sécurité"], "en": ["Workplace organization", "Productivity and safety improvement"]}}]}, {"dates": "03/2022 – 09/2022", "org": "DEFONTAINE Tunisie", "role": {"fr": "Stage de fin d'études (ingénieur)", "en": "Engineering final-year internship"}, "kind": "intern", "items": {"fr": ["Amélioration du TRS d'une machine de la ligne de production avec le service méthodes", "Mise en place d'un plan de maintenance préventive et de premier niveau", "Création des fiches d'auto-maintenance, gamme de nettoyage et fiche de suivi", "Chantier 5S de la zone de production"], "en": ["Improved the OEE of a production-line machine with the methods department", "Implemented a preventive and first-level maintenance plan", "Created autonomous-maintenance sheets, cleaning routines and tracking sheets", "Led a 5S workshop in the production area"]}}, {"dates": "07/2021 – 09/2021", "org": "UNILEVER", "role": {"fr": "Stage d'ingénieur", "en": "Engineering internship"}, "kind": "intern", "items": {"fr": ["Étude des modes de transport de la société"], "en": ["Study of the company's transport modes"]}}, {"dates": "02/2019 – 06/2019", "org": "R.N.T.A – Régie nationale des tabacs et des allumettes", "role": {"fr": "Stage de fin d'études (licence)", "en": "Bachelor's final-year internship"}, "kind": "intern", "items": {"fr": ["Réorganisation du service maintenance", "Création des documents de travail du service maintenance", "Mise en place d'un système de GMAO (gestion de maintenance assistée par ordinateur)"], "en": ["Reorganized the maintenance department", "Created the working documents used by the maintenance team", "Set up a CMMS (computerized maintenance management system)"]}}], "TRAINING": [{"dates": "01/2019 – 02/2019", "org": "KIA Motors (Best Car)", "text": {"fr": "Étude des systèmes de freinage", "en": "Study of braking systems"}}, {"dates": "01/2018 – 02/2018", "org": "Ideal Sanitaire", "text": {"fr": "Analyse de défaillance d'un réducteur de vitesse par AMDEC", "en": "FMEA failure analysis of a speed reducer"}}, {"dates": "01/2017 – 02/2017", "org": {"fr": "Stage d'initiation", "en": "Introductory internship"}, "text": {"fr": "Intégration au milieu professionnel ; méthodes de culture et d'entretien", "en": "Integration into a professional setting; cultivation and upkeep methods"}}], "EDUCATION": [{"dates": "2019 – 2022", "degree": {"fr": "Cycle d'ingénieur en électromécanique", "en": "Engineering degree in Electromechanics"}, "school": "ESPRIT – École Supérieure Privée d'Ingénierie et de Technologies", "spec": {"fr": "Spécialité : Organisation et gestion industrielle", "en": "Major: Industrial Organization & Management"}}, {"dates": "2016 – 2019", "degree": {"fr": "Licence appliquée en génie mécanique", "en": "Applied Bachelor's in Mechanical Engineering"}, "school": {"fr": "Institut Supérieur des Études Technologiques de Siliana", "en": "Higher Institute of Technological Studies of Siliana"}, "spec": {"fr": "Spécialité : Maintenance industrielle", "en": "Major: Industrial Maintenance"}}, {"dates": "2015 – 2016", "degree": {"fr": "Baccalauréat", "en": "Baccalaureate"}, "school": {"fr": "Lycée Ahmed Amin, El Mourouj", "en": "Ahmed Amin High School, El Mourouj"}, "spec": {"fr": "Section : Sciences techniques", "en": "Track: Technical Sciences"}}], "SKILLS": [{"icon": "cad", "title": {"fr": "Conception & simulation", "en": "Design & simulation"}, "tags": ["SolidWorks", "Altium Designer", "FlexSim", "Mastercam"]}, {"icon": "lean", "title": {"fr": "Lean manufacturing", "en": "Lean manufacturing"}, "tags": ["SMED", "Kaizen", "Kanban", "VSM"]}, {"icon": "quality", "title": {"fr": "Management de la qualité", "en": "Quality management"}, "tags": [{"fr": "AMDEC", "en": "FMEA (AMDEC)"}, "TPM", "Pareto", "5S"]}, {"icon": "plan", "title": {"fr": "Gestion & planification", "en": "Management & planning"}, "tags": ["SAP (MM & PP)", "PERT", "Gantt"]}, {"icon": "office", "title": {"fr": "Bureautique", "en": "Office tools"}, "tags": ["Excel", "Word", "PowerPoint"]}], "LANGUAGES": [{"name": {"fr": "Arabe", "en": "Arabic"}, "level": {"fr": "Langue maternelle", "en": "Native"}, "dots": 5}, {"name": {"fr": "Français", "en": "French"}, "level": {"fr": "Lu, écrit, parlé", "en": "Read, written, spoken"}, "dots": 4}, {"name": {"fr": "Anglais", "en": "English"}, "level": {"fr": "Lu, écrit, parlé", "en": "Read, written, spoken"}, "dots": 4}], "PROJECTS": [{"icon": "robot", "title": {"fr": "Bras robotique intelligent à énergie renouvelable", "en": "Smart renewable-energy robotic arm"}, "text": {"fr": "Conception mécanique sous SolidWorks, électronique sous Altium et application Android de commande.", "en": "Mechanical design in SolidWorks, electronics in Altium and an Android control app."}, "tags": ["SolidWorks", "Altium", "Android"]}, {"icon": "drone", "title": {"fr": "Drone agricole", "en": "Agricultural drone"}, "text": {"fr": "Conception mécanique sous SolidWorks et conception électronique sous ISIS.", "en": "Mechanical design in SolidWorks and electronic design in ISIS."}, "tags": ["SolidWorks", "ISIS"]}, {"icon": "pcb", "title": {"fr": "AMDEC process : fabrication d'une carte PCB", "en": "Process FMEA: PCB manufacturing"}, "text": {"fr": "Diagnostic et évaluation des risques sur les différents procédés de fabrication de la carte.", "en": "Diagnosis and risk assessment across each step of the board manufacturing process."}, "tags": [{"fr": "AMDEC", "en": "FMEA"}]}, {"icon": "leaf", "title": {"fr": "Développement durable et RSE", "en": "Sustainability & CSR"}, "text": {"fr": "Analyse des risques liés à la santé-sécurité au travail et à l'environnement d'une société.", "en": "Occupational health & safety and environmental risk analysis for a company."}, "tags": [{"fr": "SST", "en": "OHS"}, {"fr": "Environnement", "en": "Environment"}]}], "CERTS": [{"name": "Mastercam 2D Mill", "type": {"fr": "Certificat de réussite", "en": "Certificate of Completion"}}, {"name": "Mastercam Lathe", "type": {"fr": "Certificat de réussite", "en": "Certificate of Completion"}}, {"name": "Mastercam 3D Mill", "type": {"fr": "Certificat de réussite", "en": "Certificate of Completion"}}], "NOW": {"fr": "Présent", "en": "Present"}};
+const T = {"fr": {"nav.about": "À propos", "nav.exp": "Expérience", "nav.cred": "Diplômes", "nav.skills": "Compétences", "nav.cv": "CV", "nav.contact": "Contact", "cta": "Me contacter", "hero.eyebrow": "Ingénieur électromécanique · Ben Arous, Tunisie", "hero.lead": "<strong>Contrôleur de gestion</strong> chez MDO – Marbre Design &amp; Objet. Ingénieur en génie électromécanique, spécialité Organisation et Gestion Industrielle, avec 4 ans entre production, stock et pilotage des coûts.", "hero.contact": "Me contacter", "hero.cv": "Voir mon CV", "badge.unit": "ans", "badge.sub": "MDO · Industrie", "card.sub1": "Organisation &amp;", "card.sub2": "Gestion industrielle", "about.k": "À propos", "about.h": "Du terrain de production au pilotage des coûts", "stat.1": "ans chez MDO", "stat.2": "fonctions occupées", "stat.3": "stages en entreprise", "stat.4": "certificats Mastercam", "exp.k": "Expérience", "exp.h": "Parcours professionnel", "train.h": "Stages de perfectionnement", "cred.k": "Diplômes", "cred.h": "Formation &amp; certificats", "cert.h": "Certificats", "skills.k": "Compétences", "skills.h": "Outils &amp; méthodes", "lang.h": "Langues", "proj.k": "Projets", "proj.h": "Projets académiques", "cv.k": "Curriculum vitae", "cv.h": "Consulter &amp; télécharger mon CV", "cv.p": "Le CV est disponible en français et en anglais, dans la même charte que ce site. Choisissez la version, consultez-la ici, puis téléchargez le PDF.", "cv.view": "Version affichée", "cv.dl": "Télécharger le PDF", "cv.open": "Ouvrir en plein écran", "cv.meta": "PDF · A4 · 1 page", "contact.k": "Contact", "contact.h": "Parlons de votre prochain projet industriel", "contact.p": "Disponible pour des postes en contrôle de gestion, méthodes, maintenance ou amélioration continue.", "copy": "Copier", "copied": "Copié", "saved": "CV enregistré", "dlfail": "Téléchargement impossible ici. Ouvrez le PDF puis enregistrez-le.", "close": "Fermer", "footer": "Ingénieur électromécanique · Organisation & Gestion industrielle"}, "en": {"nav.about": "About", "nav.exp": "Experience", "nav.cred": "Credentials", "nav.skills": "Skills", "nav.cv": "CV", "nav.contact": "Contact", "cta": "Get in touch", "hero.eyebrow": "Electromechanical Engineer · Ben Arous, Tunisia", "hero.lead": "<strong>Management Controller</strong> at MDO – Marbre Design &amp; Objet. Electromechanical engineer specialized in Industrial Organization &amp; Management, with 4 years across production, inventory and cost control.", "hero.contact": "Contact me", "hero.cv": "View my CV", "badge.unit": "yrs", "badge.sub": "MDO · Industry", "card.sub1": "Industrial", "card.sub2": "Organization &amp; Mgmt", "about.k": "About", "about.h": "From the production floor to cost control", "stat.1": "years at MDO", "stat.2": "roles held", "stat.3": "company internships", "stat.4": "Mastercam certificates", "exp.k": "Experience", "exp.h": "Career path", "train.h": "Additional internships", "cred.k": "Credentials", "cred.h": "Education &amp; certificates", "cert.h": "Certificates", "skills.k": "Skills", "skills.h": "Tools &amp; methods", "lang.h": "Languages", "proj.k": "Projects", "proj.h": "Academic projects", "cv.k": "Curriculum vitae", "cv.h": "View &amp; download my CV", "cv.p": "The CV is available in French and English, in the same style as this site. Pick a version, view it here, then download the PDF.", "cv.view": "Showing", "cv.dl": "Download PDF", "cv.open": "Open full screen", "cv.meta": "PDF · A4 · 1 page", "contact.k": "Contact", "contact.h": "Let's talk about your next industrial project", "contact.p": "Open to roles in management control, methods, maintenance or continuous improvement.", "copy": "Copy", "copied": "Copied", "saved": "CV saved", "dlfail": "Download isn't available here. Open the PDF and save it from there.", "close": "Close", "footer": "Electromechanical Engineer · Industrial Organization & Management"}};
+T.fr["logo.sub"]="Électromécanique"; T.en["logo.sub"]="Electromechanics";
+T.fr["lbl.phone"]="Téléphone"; T.en["lbl.phone"]="Phone";
+T.fr["lbl.loc"]="Localisation"; T.en["lbl.loc"]="Location";
+T.fr["city"]=DATA.PROFILE.city.fr; T.en["city"]=DATA.PROFILE.city.en;
+const ICONS = {"gear": "<path d=\"M12 2.5l1.3 2.2 2.5-.6.6 2.5 2.4.9-.6 2.5 1.8 1.8-1.8 1.8.6 2.5-2.4.9-.6 2.5-2.5-.6L12 21.5l-1.3-2.2-2.5.6-.6-2.5-2.4-.9.6-2.5L4 12.2l1.8-1.8-.6-2.5 2.4-.9.6-2.5 2.5.6z\"/><circle cx=\"12\" cy=\"12\" r=\"3.2\"/>", "bolt": "<path d=\"M13 2L4.5 13.5H11L10 22l8.5-11.5H12z\"/>", "gearbolt": "<path d=\"M12 2.5l1.3 2.2 2.5-.6.6 2.5 2.4.9-.6 2.5 1.8 1.8-1.8 1.8.6 2.5-2.4.9-.6 2.5-2.5-.6L12 21.5l-1.3-2.2-2.5.6-.6-2.5-2.4-.9.6-2.5L4 12.2l1.8-1.8-.6-2.5 2.4-.9.6-2.5 2.5.6z\"/><path d=\"M12.6 7.6L9.6 12.4h2.6l-.8 4 3-4.8h-2.6z\"/>", "wrench": "<path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z\"/>", "chip": "<rect x=\"6\" y=\"6\" width=\"12\" height=\"12\" rx=\"1.5\"/><rect x=\"9.5\" y=\"9.5\" width=\"5\" height=\"5\"/><path d=\"M9 2.5v3.5M15 2.5v3.5M9 18v3.5M15 18v3.5M2.5 9H6M2.5 15H6M18 9h3.5M18 15h3.5\"/>", "hazard": "<path d=\"M12 3L2 20.5h20z\"/><path d=\"M12.8 9l-2.4 4.2h2.4l-1.4 4\"/>", "mail": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3.5 6.5L12 13l8.5-6.5\"/>", "phone": "<path d=\"M5 3.5h3.5l1.8 4.5-2.3 1.5a11 11 0 0 0 6.5 6.5l1.5-2.3 4.5 1.8V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5z\"/>", "pin": "<path d=\"M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z\"/><circle cx=\"12\" cy=\"9.5\" r=\"2.5\"/>", "download": "<path d=\"M12 3.5v12M7 11l5 5 5-5M4 20.5h16\"/>", "eye": "<path d=\"M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>", "cad": "<path d=\"M12 2.5l8.5 4.8v9.4L12 21.5l-8.5-4.8V7.3z\"/><path d=\"M3.5 7.3L12 12l8.5-4.7M12 12v9.5\"/>", "lean": "<path d=\"M3 17l5-5 4 4 8-8\"/><path d=\"M14 8h6v6\"/>", "quality": "<circle cx=\"12\" cy=\"9\" r=\"6\"/><path d=\"M9.5 9l1.8 1.8L14.8 7.3\"/><path d=\"M8.5 14l-1.5 7.5 5-2.5 5 2.5-1.5-7.5\"/>", "plan": "<rect x=\"3\" y=\"4.5\" width=\"18\" height=\"16\" rx=\"1.5\"/><path d=\"M3 9.5h18M8 2.5v4M16 2.5v4M7 13.5h4M7 17h7\"/>", "office": "<rect x=\"3\" y=\"3.5\" width=\"18\" height=\"17\" rx=\"1.5\"/><path d=\"M3 9h18M9 9v11.5\"/>", "robot": "<path d=\"M5 20.5h8M9 20.5v-4\"/><circle cx=\"9\" cy=\"15\" r=\"1.6\"/><path d=\"M9 13.4L14 7\"/><circle cx=\"14.5\" cy=\"6.5\" r=\"1.5\"/><path d=\"M15.8 7.4l4.2 3.1M19.2 9.2l1.6 3.4\"/>", "drone": "<circle cx=\"5.5\" cy=\"5.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"5.5\" r=\"2.5\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/><rect x=\"9.5\" y=\"9.5\" width=\"5\" height=\"5\" rx=\"1\"/><path d=\"M7.3 7.3l2.2 2.2M16.7 7.3l-2.2 2.2M7.3 16.7l2.2-2.2M16.7 16.7l-2.2-2.2\"/>", "pcb": "<rect x=\"6\" y=\"6\" width=\"12\" height=\"12\" rx=\"1.5\"/><rect x=\"9.5\" y=\"9.5\" width=\"5\" height=\"5\"/><path d=\"M9 2.5v3.5M15 2.5v3.5M9 18v3.5M15 18v3.5M2.5 9H6M2.5 15H6M18 9h3.5M18 15h3.5\"/>", "leaf": "<path d=\"M5 19c0-8 5.5-13.5 15-14-.5 9.5-6 15-14 15\"/><path d=\"M5 19l7-7\"/>", "cert": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"12\" rx=\"1.5\"/><circle cx=\"12\" cy=\"17\" r=\"3\"/><path d=\"M10.2 19.4L9.5 22l2.5-1 2.5 1-.7-2.6M7 8h10M7 11h5\"/>", "cap": "<path d=\"M2 9l10-5 10 5-10 5z\"/><path d=\"M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6\"/>", "globe": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18\"/>", "user": "<circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6\"/>"};
+const ic=(n,s=22,sw=1.8)=>`<svg class="ic" viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]}</svg>`;
+const L=(v,l)=> (v && typeof v==='object' && 'fr' in v) ? v[l] : v;
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const $=id=>document.getElementById(id);
+let lang='fr', cvLang='fr';
+
+function render(){
+  const now=DATA.NOW[lang];
+  $('summary').textContent=L(DATA.PROFILE.summary,lang);
+  $('timeline').innerHTML=DATA.EXPERIENCE.map(e=>{
+    const items=e.sub
+      ? `<div class="subs">${e.sub.map((s,i)=>`<div class="sub ${i===0?'now':''}"><span class="date">${s.dates.replace('{now}',now)}</span><b>${esc(L(s.title,lang))}</b><ul>${L(s.items,lang).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('')}</div>`
+      : `<ul>${L(e.items,lang).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+    return `<article class="tl"><span class="date">${e.dates.replace('{now}',now)}</span><h4>${esc(e.org)}</h4><div class="role">${esc(L(e.role,lang))}</div>${items}</article>`;
+  }).join('');
+  $('train').innerHTML=DATA.TRAINING.map(x=>`<div class="tcard"><span class="date">${x.dates}</span><b>${esc(L(x.org,lang))}</b><div>${esc(L(x.text,lang))}</div></div>`).join('');
+  $('edu').innerHTML=DATA.EDUCATION.map(x=>`<div class="edu-row"><span class="date">${x.dates}</span><div><b>${esc(L(x.degree,lang))}</b><span>${esc(L(x.school,lang))}</span><em>${esc(L(x.spec,lang))}</em></div></div>`).join('');
+  $('certs').innerHTML=DATA.CERTS.map(c=>`<div class="cert">${ic('cert',28)}<div><b>${esc(c.name)}</b><small>${esc(L(c.type,lang))}</small></div></div>`).join('');
+  $('skillgrid').innerHTML=DATA.SKILLS.map(s=>`<div class="skill">${ic(s.icon,30,1.7)}<h3>${esc(L(s.title,lang))}</h3><div class="tags">${s.tags.map(t=>`<span>${esc(L(t,lang))}</span>`).join('')}</div></div>`).join('');
+  $('langs').innerHTML=DATA.LANGUAGES.map(x=>`<div class="lg"><div><b>${esc(L(x.name,lang))}</b><small>${esc(L(x.level,lang))}</small></div><div class="dots" aria-label="${x.dots}/5">${[0,1,2,3,4].map(k=>`<i class="${k<x.dots?'on':''}"></i>`).join('')}</div></div>`).join('');
+  $('projgrid').innerHTML=DATA.PROJECTS.map(p=>`<article class="proj"><span class="icbox">${ic(p.icon,28,1.7)}</span><div><h3>${esc(L(p.title,lang))}</h3><p>${esc(L(p.text,lang))}</p><div class="tags">${p.tags.map(t=>`<span>${esc(L(t,lang))}</span>`).join('')}</div></div></article>`).join('');
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const v=T[lang][el.dataset.i18n]; if(v!==undefined) el.innerHTML=v; });
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed', b.dataset.lang===lang));
+}
+function setCv(l){
+  cvLang=l; const f=`cv/CV_Mabrouk_Hajji_${l.toUpperCase()}.pdf`;
+  $('cv-img').src=`cv/preview_${l}.jpg`;
+  $('cv-dl').href=f; $('cv-open').href=f;
+  $('cv-meta').firstChild.textContent=`CV_Mabrouk_Hajji_${l.toUpperCase()}.pdf · `;
+  document.querySelectorAll('[data-cv]').forEach(b=>b.setAttribute('aria-pressed', b.dataset.cv===l));
+}
+function setLang(l){ lang=l; render(); setCv(l); try{localStorage.setItem('mh-lang',l)}catch(e){} }
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+document.querySelectorAll('[data-cv]').forEach(b=>b.addEventListener('click',()=>setCv(b.dataset.cv)));
+
+function toast(msg){ const t=document.createElement('div'); t.className='toast'; t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2600); }
+
+// Download: inside Claude's viewer use the downloads capability; on a normal web host the plain download link works.
+$('cv-dl').addEventListener('click', async ev=>{
+  if(!(window.claude && window.claude.use)) return;
+  ev.preventDefault();
+  const name=`CV_Mabrouk_Hajji_${cvLang.toUpperCase()}.pdf`;
+  try{
+    const dl=await window.claude.use('downloads');
+    if(!dl) { toast(T[lang].dlfail); return; }
+    const blob=await (await fetch('cv/'+name)).blob();
+    await dl.save({filename:name, data:blob});
+    toast(T[lang].saved);
+  }catch(e){ if(!(e && e.code==='declined')) toast(T[lang].dlfail); }
+});
+
+// Full-screen viewer
+function openLb(){
+  const lb=document.createElement('div'); lb.className='lightbox';
+  lb.innerHTML=`<button class="lb-close" type="button">${T[lang].close} ✕</button><img src="cv/preview_${cvLang}.jpg" alt="CV">`;
+  const close=()=>{lb.remove(); document.removeEventListener('keydown',onk)};
+  const onk=e=>{if(e.key==='Escape')close()};
+  lb.addEventListener('click',e=>{ if(e.target===lb||e.target.closest('.lb-close')) close(); });
+  document.addEventListener('keydown',onk); document.body.appendChild(lb); lb.querySelector('.lb-close').focus();
+}
+$('sheet').addEventListener('click',openLb);
+$('sheet').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb()} });
+$('cv-open').addEventListener('click',e=>{ if(window.claude && window.claude.use){ e.preventDefault(); openLb(); } });
+
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
+  try{ await navigator.clipboard.writeText(b.dataset.copy); b.textContent=T[lang].copied; setTimeout(()=>b.textContent=T[lang].copy,1600); }
+  catch(e){ const r=document.createRange(); r.selectNodeContents(b.previousElementSibling); const s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+}));
+
+let saved=null; try{saved=localStorage.getItem('mh-lang')}catch(e){}
+setLang(saved==='en'?'en':'fr');
+</script>
+
+</body>
+</html>
