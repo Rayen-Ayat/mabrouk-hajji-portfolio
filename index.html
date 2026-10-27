@@ -43,7 +43,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
 .logo .mark{width:38px;height:38px;border-radius:10px;background:var(--ink);color:var(--accent);display:grid;place-items:center}
 .logo b{font-weight:800} .logo span.thin{font-weight:600;color:var(--muted)}
-nav.links{display:flex;gap:22px;margin-left:auto;white-space:nowrap}
+nav.links{display:flex;gap:22px;margin-left:auto;white-space:nowrap;min-width:0;overflow:hidden}
 nav.links a{text-decoration:none;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);padding:6px 0;white-space:nowrap;border-bottom:2px solid transparent}
 nav.links a:hover{border-color:var(--accent)}
 .lang{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;flex:none}
@@ -189,6 +189,7 @@ footer .logo{color:#fff;font-size:18px} footer .logo .mark{background:#F5C400;co
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:500;z-index:120;max-width:calc(100% - 32px)}
 
 /* responsive */
+@media (max-width:1440px){ .top .btn{display:none} }
 @media (max-width:1220px){ nav.links{display:none} .lang{margin-left:auto} }
 @media (max-width:900px){
   .hero{grid-template-columns:1fr}
@@ -322,7 +323,7 @@ footer .logo{color:#fff;font-size:18px} footer .logo .mark{background:#F5C400;co
   <h2 data-i18n="contact.h">Parlons de votre prochain projet industriel</h2>
   <p class="sub-lead" data-i18n="contact.p">Disponible pour des postes en contrôle de gestion, méthodes, maintenance ou amélioration continue.</p>
   <div class="ctiles">
-    <div class="ctile"><svg class="ic " viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg><span class="lbl">Email</span><span class="val">hajjimabrouk50@gmail.com</span><button class="copy" type="button" data-copy="hajjimabrouk50@gmail.com" data-i18n="copy">Copier</button></div>
+    <div class="ctile"><svg class="ic " viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg><span class="lbl">Email</span><span class="val" style="font-size:18px">hajjimabrouk50@gmail.com</span><button class="copy" type="button" data-copy="hajjimabrouk50@gmail.com" data-i18n="copy">Copier</button></div>
     <div class="ctile"><svg class="ic " viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.5l1.8 4.5-2.3 1.5a11 11 0 0 0 6.5 6.5l1.5-2.3 4.5 1.8V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5z"/></svg><span class="lbl" data-i18n="lbl.phone">Téléphone</span><span class="val">+216 20 584 221</span><button class="copy" type="button" data-copy="+216 20 584 221" data-i18n="copy">Copier</button></div>
     <div class="ctile"><svg class="ic " viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span class="lbl" data-i18n="lbl.loc">Localisation</span><span class="val" data-i18n="city">Ben Arous, Tunisie</span></div>
     <div class="ctile"><svg class="ic " viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.1M12 17v-6.5M12 13.5c0-1.8 1.2-3 2.7-3s2.3 1 2.3 2.8V17"/></svg><span class="lbl">LinkedIn</span><span class="val">Mabrouk Hajji</span><a class="copy" href="https://www.linkedin.com/in/mabrouk-hajji-0707893a8" target="_blank" rel="noopener" data-i18n="open.li">Voir le profil</a></div>
